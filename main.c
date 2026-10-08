@@ -1,19 +1,17 @@
 #include <stdio.h>
 
-void print_star(void)
+void func(int x)
 {
-    int i;
-
-    for (i = 0; i < 10; i++)
-        printf("*");
+    printf("func x: value=%d, address=%p\n", x, (void *)&x);
 }
 
 int main(void)
 {
-    print_star();
-    print_star();
-    print_star();
-    printf("\n");
+    int x = 7;
+
+    printf("main x: value=%d, address=%p\n", x, (void *)&x);
+    func(x);
+    func(x);
 
     return 0;
 }
